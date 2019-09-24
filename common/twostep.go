@@ -56,7 +56,7 @@ func (t *TwoStepAuth) SaveOtp(otp *twofactor.Totp) error {
 		return err
 	}
 
-	twoStepDb.Set(map[string][]byte{
+	_ = twoStepDb.Set(map[string][]byte{
 		t.Username: otpBytes,
 	})
 
@@ -136,8 +136,8 @@ func (t *TwoStepAuth) Enable() (map[string]interface{}, error) {
 
 	// 保存otp对象到数据库，到验证的时候取出来再验证
 	t.SaveOtp(otp)
-
-	return map[string]interface{}{"key": otp.Secret(), "qrImage": path.Join("/api/", imgPath)}, nil
+	secret,_ := otp.OTP()
+	return map[string]interface{}{"key": secret, "qrImage": path.Join("/api/", imgPath)}, nil
 }
 
 // Disable 禁用2步验证 实际就是从数据库删除记录

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"devops-api/common"
-	_ "devops-api/routers"
+	"github.com/oldthreefeng/devops-api/common"
+	_ "github.com/oldthreefeng/devops-api/routers"
 
 	"github.com/astaxie/beego"
 )
@@ -23,3 +23,10 @@ func main() {
 	common.InitCli()
 
 }
+
+/*
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicm9vdCIsInVwZGF0ZVRpbWUiOjE1NjkzMDkxMzh9.lZSHf7subGSwyqqF4K9wQEjSwI1qqfpwgFfl6HKRMlw
+
+ For < louis > token only shows once, keep in mind!!!
+         eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibG91aXMiLCJ1cGRhdGVUaW1lIjoxNTY5MzA5MjA4fQ.U0EmmJ_jimuKakwPp-sA3PtxiIfBjyndEycuyrBouL8
+*/

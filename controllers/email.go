@@ -5,7 +5,7 @@ import (
 	"path"
 	"strings"
 
-	"devops-api/common"
+	"github.com/oldthreefeng/devops-api/common"
 )
 
 var (

@@ -3,7 +3,7 @@ package controllers
 import (
 	"fmt"
 
-	"devops-api/common"
+	"github.com/oldthreefeng/devops-api/common"
 )
 
 // Post 接收中国的节假日安排, 为判断节假日和工作日准备

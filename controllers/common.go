@@ -6,7 +6,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/satori/go.uuid"
 
-	"devops-api/common"
+	"github.com/oldthreefeng/devops-api/common"
 )
 
 func getUniqueIDName() string {
@@ -105,15 +105,16 @@ func (b *BaseController) Prepare() {
 
 	uniqueID := b.Ctx.Input.Header(UniQueIDName)
 	if uniqueID == "" {
-		uid, err := uuid.NewV4()
-		if err != nil {
-			common.GetLogger().Error(map[string]interface{}{
-				"entryType": "Get UUID",
-			}, fmt.Sprintf("%s", err))
-			uniqueID = ""
-		} else {
+		uid := uuid.NewV4()
+		//uid, err := uuid.NewV4()
+		//if err != nil {
+		//	common.GetLogger().Error(map[string]interface{}{
+		//		"entryType": "Get UUID",
+		//	}, fmt.Sprintf("%s", err))
+		//	uniqueID = ""
+		//} else {
 			uniqueID = fmt.Sprintf("%s", uid)
-		}
+		//}
 	}
 	b.Data[UniQueIDName] = uniqueID
 

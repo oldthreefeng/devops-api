@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"devops-api/controllers"
+	"github.com/oldthreefeng/devops-api/controllers"
 
 	"github.com/astaxie/beego"
 )

@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"devops-api/common"
+	"github.com/oldthreefeng/devops-api/common"
 )
 
 // Get 获取程序版本号

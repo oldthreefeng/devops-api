@@ -3,7 +3,7 @@ package controllers
 import (
 	"fmt"
 
-	"devops-api/common"
+	"github.com/oldthreefeng/devops-api/common"
 )
 
 var (

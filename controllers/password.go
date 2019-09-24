@@ -6,7 +6,7 @@ import (
 
 	"github.com/chanyipiaomiao/hltool"
 
-	"devops-api/common"
+	"github.com/oldthreefeng/devops-api/common"
 	"github.com/astaxie/beego"
 )
 
