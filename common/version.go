@@ -8,7 +8,7 @@ var (
 	AppName = "devops-api"
 
 	// AppVersion 程序版本号
-	AppVersion = "1.0.0"
+	AppVersion = "1.0.1"
 
 	// AppDescription 程序描述
 	AppDescription = "happy with devops-api"
@@ -20,10 +20,10 @@ var (
 	BuildDate = "2018-08-29"
 
 	// Author 作者
-	Author = "helei"
+	Author = "oldthreefeng"
 
 	// GitHub 地址
-	GitHub = "https://github.com/chanyipiaomiao"
+	GitHub = "https://github.com/oldthreefeng"
 )
 
 // GetVersion 获取版本信息
