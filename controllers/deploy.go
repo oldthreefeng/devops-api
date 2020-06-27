@@ -25,7 +25,7 @@ func (d *DeployController) Github()  {
 		return
 	}
 	//return 200 first
-	d.JsonOK(deployEntryType, StringMap{"result": "deploy ok"}, true)
+	d.JsonOK(deployEntryType, StringMap{"result": "deploy ok, Signatures did match"}, true)
 	ReLaunch("/app/w.sh")
 
 }
@@ -35,8 +35,6 @@ func VerifySignature(d *DeployController) (bool, error) {
 	// Get Header with X-Hub-Signature
 	XHubSignature := d.Ctx.Request.Header.Get("X-Hub-Signature")
 	signature := getSha1Code(PayloadBody)
-	d.JsonOK(deployEntryType,StringMap{"signature": XHubSignature}, true)
-	d.JsonOK(deployEntryType,StringMap{"signature": signature}, true)
 	return XHubSignature == signature, nil
 }
 
