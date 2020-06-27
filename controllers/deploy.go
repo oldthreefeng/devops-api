@@ -4,7 +4,7 @@ import (
 	"crypto/hmac"
 	"crypto/sha1"
 	"encoding/hex"
-	log "github.com/sirupsen/logrus"
+	"fmt"
 	"io/ioutil"
 	"os/exec"
 )
@@ -23,10 +23,10 @@ func (d *DeployController) Github()  {
 	if !matched {
 		err := "Signatures did not match"
 		d.JsonError(deployEntryType, err, StringMap{"result": err}, true)
-		log.Warn(err)
+		fmt.Println(err)
 		return
 	}
-	log.Info("Signatures is matched ~")
+	fmt.Println("Signatures is matched ~")
 	//return 200 first
 	d.JsonOK(deployEntryType, StringMap{"result": "deploy ok"}, true)
 	ReLaunch("/app/w.sh")
@@ -41,7 +41,7 @@ func VerifySignature(d *DeployController) (bool, error) {
 	// Get Header with X-Hub-Signature
 	XHubSignature := d.Ctx.Request.Header.Get("X-Hub-Signature")
 	signature := getSha1Code(PayloadBody)
-	log.Info(signature)
+	fmt.Println(signature)
 	return XHubSignature == signature, nil
 }
 
@@ -58,7 +58,7 @@ func ReLaunch(cmdStr string) {
 	cmd := exec.Command("sh", cmdStr)
 	err := cmd.Start()
 	if err != nil {
-		log.Fatal(err.Error())
+		fmt.Println(err.Error())
 	}
 	err = cmd.Wait()
 }
