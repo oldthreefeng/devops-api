@@ -48,6 +48,10 @@ func init() {
 			beego.NSNamespace("/version",
 				beego.NSRouter("", &controllers.VersionController{}),
 			),
+			beego.NSNamespace("/deploy",
+			beego.NSRouter("/AliCode",&controllers.DeployController{},"post:AliCode"),
+			beego.NSRouter("/Github",&controllers.DeployController{}, "post:Github"),
+			),
 		),
 	)
 	beego.AddNamespace(apins)

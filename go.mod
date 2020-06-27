@@ -29,7 +29,7 @@ require (
 	github.com/sec51/qrcode v0.0.0-20160126144534-b7779abbcaf1 // indirect
 	github.com/sec51/twofactor v1.0.0
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
-	github.com/sirupsen/logrus v1.4.2 // indirect
+	github.com/sirupsen/logrus v1.4.2
 	github.com/smartystreets/goconvey v0.0.0-20190731233626-505e41936337
 	github.com/tebeka/strftime v0.1.3 // indirect
 	github.com/tidwall/gjson v1.3.2

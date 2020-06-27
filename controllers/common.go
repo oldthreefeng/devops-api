@@ -211,3 +211,7 @@ type PhoneController struct {
 	BaseController
 }
 
+// DeployController 部署
+type DeployController struct {
+	BaseController
+}
