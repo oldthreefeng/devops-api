@@ -5,7 +5,6 @@ import (
 	"crypto/sha1"
 	"encoding/hex"
 	"fmt"
-	"io/ioutil"
 	"os/exec"
 )
 
@@ -32,13 +31,11 @@ func (d *DeployController) Github()  {
 }
 
 func VerifySignature(d *DeployController) (bool, error) {
-	PayloadBody, err := ioutil.ReadAll(d.Ctx.Request.Body)
-	if err != nil {
-		return false, err
-	}
+	PayloadBody := d.Ctx.Input.RequestBody
 	// Get Header with X-Hub-Signature
 	XHubSignature := d.Ctx.Request.Header.Get("X-Hub-Signature")
 	signature := getSha1Code(PayloadBody)
+	d.JsonOK(deployEntryType,StringMap{"signature": XHubSignature}, true)
 	d.JsonOK(deployEntryType,StringMap{"signature": signature}, true)
 	return XHubSignature == signature, nil
 }
